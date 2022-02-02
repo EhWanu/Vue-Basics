@@ -10,12 +10,35 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
+		<link rel="stylesheet" href="styles.css" />
 		<title>Vue Basics</title>
 		<script src="https://unpkg.com/vue@3.0.2"></script>
 	</head>
 	<body>
 		<div id="app">
-			<p>{{ title }} - {{ author }} - {{ age }}</p>
+			<!-- attribute binding -->
+			<!-- <a :href="url">best website ever</a> -->
+			<div v-if="showBooks">
+				<ul>
+					<li
+						@click="handleEvent(book)"
+						v-for="book in filteredBooks"
+						:class="{ fav: book .isFav }"
+					>
+						<img
+							:src="book.img"
+							:alt="book.title"
+							class="bookImg"
+						/>
+						<h3>{{ book.title }}</h3>
+						<p>{{ book.author }}</p>
+					</li>
+				</ul>
+			</div>
+			<button @click="toggleShowBooks">
+				<span v-if="showBooks">Hide Books</span>
+				<span v-else>Show Books</span>
+			</button>
 		</div>
 		<script src="app.js"></script>
 	</body>
