@@ -20,7 +20,10 @@
 			<!-- <a :href="url">best website ever</a> -->
 			<div v-if="showBooks">
 				<ul>
-					<li v-for="book in books">
+					<li
+						v-for="book in books"
+						:class="{ fav: book .isFav }"
+					>
 						<img
 							:src="book.img"
 							:alt="book.title"
