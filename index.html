@@ -21,6 +21,7 @@
 			<div v-if="showBooks">
 				<ul>
 					<li
+						@click="handleEvent(book)"
 						v-for="book in books"
 						:class="{ fav: book .isFav }"
 					>

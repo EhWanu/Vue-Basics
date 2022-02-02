@@ -29,6 +29,10 @@ const app = Vue.createApp({
 		toggleShowBooks() {
 			this.showBooks = !this.showBooks;
 		},
+		handleEvent(book) {
+			book.isFav = !book.isFav;
+			console.log("click");
+		},
 	},
 });
 app.mount("#app");
