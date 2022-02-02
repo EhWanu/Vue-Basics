@@ -22,7 +22,7 @@
 				<ul>
 					<li
 						@click="handleEvent(book)"
-						v-for="book in books"
+						v-for="book in filteredBooks"
 						:class="{ fav: book .isFav }"
 					>
 						<img
